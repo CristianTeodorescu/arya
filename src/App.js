@@ -23,30 +23,35 @@ const businessCategories = [
   { id: "h", name: "Tipografie", emoji: "🖨️" },
 ];
 
-// Trash data with business categories
+// Trash data with business categories and real images
 const trashItems = [
-  { id: 1, name: "Plastic Bottle", category: "a" },
-  { id: 2, name: "Newspaper", category: "b" },
-  { id: 3, name: "Glass Jar", category: "a" },
-  { id: 4, name: "Cardboard Box", category: "b" },
-  { id: 5, name: "Aluminum Can", category: "a" },
-  { id: 6, name: "Magazine", category: "b" },
-  { id: 7, name: "Food Waste", category: "c" },
-  { id: 8, name: "Plastic Bag", category: "a" },
-  { id: 9, name: "Pizza Box", category: "c" },
-  { id: 10, name: "Metal Lid", category: "a" },
+  { id: 1, name: "Deseuri Ulei", image: "deseuri-ulei.jpeg", category: "a" },
+  { id: 2, name: "Deseuri Hartie/Carton", image: "deseuri-hartie-carton.jpeg", category: "b" },
+  { id: 3, name: "Deseuri Sticla", image: "deseuri-sticla.jpeg", category: "a" },
+  { id: 4, name: "Deseuri Municipale", image: "deseuri-municipale.jpeg", category: "b" },
+  { id: 5, name: "Deseuri Metalice", image: "deseuri-metalice.jpeg", category: "a" },
+  { id: 6, name: "Deseuri Menajere", image: "deseuri-menajere.jpeg", category: "b" },
+  { id: 7, name: "Deseuri Auto", image: "deseuri-auto.jpeg", category: "c" },
+  { id: 8, name: "Ambalaje Plastic", image: "deseuri-ambalaje-plastic.jpeg", category: "a" },
+  { id: 9, name: "Deseuri Constructii", image: "deseuri-constructii.jpeg", category: "c" },
+  { id: 10, name: "Ambalaje Sticla", image: "ambalaje-sticla.jpeg", category: "a" },
+  { id: 11, name: "DEE-uri", image: "DEE-uri.jpeg", category: "a" },
+  { id: 12, name: "Becuri", image: "becuri.jpeg", category: "a" },
+  { id: 13, name: "Substante Periculoase", image: "substante-periculoase.jpeg", category: "c" },
+  { id: 14, name: "Uleiuri Uzate", image: "uleiuri-uzate.jpeg", category: "c" },
+  { id: 15, name: "Deseuri Lemn/Mobilier Vechi", image: "deseuri-lemn-mobilier-vechi.jpeg", category: "c" },
 ];
 
 // Correct answers for each business category
 const correctAnswers = {
-  a: [1, 3, 5, 8, 10], // HoReCa - Recyclable plastics and metals
-  b: [2, 4, 6],        // Construcții - Paper products
-  c: [7, 9],           // Magazin online/fizic - Organic waste
-  d: [2, 4, 6],        // Educație - Paper products
-  e: [1, 3, 8],        // Beauty - Plastic containers
-  f: [5, 10],          // Service auto - Metal parts
-  g: [2, 4, 6],        // Birouri/Servicii - Paper products
-  h: [2, 4, 6],        // Tipografie - Paper products
+  a: [1, 3, 5, 8, 10, 11, 12, 9, 6, 4, 2, 15], // HoReCa - Oil, glass, metal, plastic, glass packaging, electronics, bulbs, construction, household, municipal, paper, wood/furniture
+  b: [2, 4, 6, 9, 5, 7, 12, 8, 13, 10, 11, 3, 15, 1], // Construcții - Paper/cardboard, municipal, household, construction, metal, auto, bulbs, plastic, hazardous, glass packaging, electronics, glass, wood/furniture, oil
+  c: [7, 13, 14, 15, 6, 12, 8, 4, 2, 10, 11], // Magazin online/fizic - Auto, hazardous, used oil, wood/furniture, household, bulbs, plastic, municipal, paper, glass packaging, electronics
+  d: [2, 4, 6, 12, 8, 10, 11, 15],          // Educație - Paper/cardboard, municipal, household, bulbs, plastic, glass packaging, electronics, wood/furniture
+  e: [1, 3, 8, 11, 6, 12, 4, 2, 13, 10, 15], // Beauty - Oil, glass, plastic, electronics, household, bulbs, municipal, paper, hazardous, glass packaging, wood/furniture
+  f: [5, 7, 13, 14, 6, 12, 8, 4, 2, 10, 11, 3, 15, 1], // Service auto - Metal, auto, hazardous, used oil, household, bulbs, plastic, municipal, paper, glass packaging, electronics, glass, wood/furniture, oil
+  g: [2, 4, 6, 11, 12, 8, 10, 15],          // Birouri/Servicii - Paper, municipal, household, electronics, bulbs, plastic, glass packaging, wood/furniture
+  h: [2, 4, 6, 5, 12, 8, 10, 11, 15],       // Tipografie - Paper/cardboard, municipal, household, metal, bulbs, plastic, glass packaging, electronics, wood/furniture
 };
 
 const { Option } = Select;
@@ -283,8 +288,8 @@ export default function TrashSortingApp() {
              <div 
                style={{ 
                  display: "grid",
-                 gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))",
-                 gap: "16px",
+                 gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
+                 gap: "20px",
                  marginBottom: "24px"
                }}
              >
@@ -309,20 +314,43 @@ export default function TrashSortingApp() {
                    >
                      <div 
                        style={{
-                         width: "64px",
-                         height: "64px",
-                         margin: "0 auto 8px",
-                         background: "#eeeeee",
-                         border: "2px dashed #bdbdbd",
-                         borderRadius: "8px",
-                         display: "flex",
-                         alignItems: "center",
-                         justifyContent: "center"
+                         width: "120px",
+                         height: "120px",
+                         margin: "0 auto 12px",
+                         borderRadius: "12px",
+                         overflow: "hidden",
+                         border: "2px solid #e0e0e0"
                        }}
                      >
-                       <span style={{ fontSize: "12px", color: "#9e9e9e" }}>{item.id}</span>
+                       <img 
+                         src={`/images/${item.image}`}
+                         alt={item.name}
+                         style={{
+                           width: "100%",
+                           height: "100%",
+                           objectFit: "cover"
+                         }}
+                         onError={(e) => {
+                           e.target.style.display = "none";
+                           e.target.nextSibling.style.display = "flex";
+                         }}
+                       />
+                       <div 
+                         style={{
+                           width: "100%",
+                           height: "100%",
+                           background: "#eeeeee",
+                           border: "2px dashed #bdbdbd",
+                           borderRadius: "8px",
+                           display: "none",
+                           alignItems: "center",
+                           justifyContent: "center"
+                         }}
+                       >
+                         <span style={{ fontSize: "12px", color: "#9e9e9e" }}>{item.id}</span>
+                       </div>
                      </div>
-                     <span style={{ fontSize: "12px" }}>{item.name}</span>
+                     <span style={{ fontSize: "14px", fontWeight: "500", textAlign: "center", lineHeight: "1.3" }}>{item.name}</span>
                    </div>
                  );
                })}
@@ -340,14 +368,6 @@ export default function TrashSortingApp() {
                    style={{ flex: 1 }}
                  >
                    Trimite Selecția
-                 </Button>
-                 <Button
-                   onClick={handleReset}
-                   icon={<ReloadOutlined />}
-                   size="large"
-                   style={{ flex: 1 }}
-                 >
-                   Începe Din Nou
                  </Button>
              </div>
            )}
