@@ -143,7 +143,7 @@ export default function TrashSortingApp() {
         </div>
 
         <Card 
-          title={currentStep === 0 ? "Provocarea Sortării Deșeurilor" : `Provocarea Sortării Deșeurilor - Pasul ${currentStep} din 3`}
+          title={currentStep === 0 ? "Provocarea Sortării Deșeurilor" : `Pasul ${currentStep} din 3`}
           style={{ 
             borderRadius: "12px",
             boxShadow: "0 4px 12px rgba(0,0,0,0.1)"
