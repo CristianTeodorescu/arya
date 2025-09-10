@@ -21,6 +21,7 @@ const businessCategories = [
   { id: "f", name: "Service auto", emoji: "🔧" },
   { id: "g", name: "Birouri/Servicii", emoji: "🏢" },
   { id: "h", name: "Tipografie", emoji: "🖨️" },
+  { id: "i", name: "Producție", emoji: "🏭" },
 ];
 
 // Trash data with business categories and real images
@@ -40,18 +41,23 @@ const trashItems = [
   { id: 13, name: "Substante Periculoase", image: "substante-periculoase.jpeg", category: "c" },
   { id: 14, name: "Uleiuri Uzate", image: "uleiuri-uzate.jpeg", category: "c" },
   { id: 15, name: "Deseuri Lemn/Mobilier Vechi", image: "deseuri-lemn-mobilier-vechi.jpeg", category: "c" },
+  { id: 16, name: "Deseuri Neferoase", image: "deseuri-neferoase.jpeg", category: "c" },
+  { id: 17, name: "Deseuri Textile", image: "deseuri-textile.jpeg", category: "c" },
+  { id: 18, name: "Filtre Ulei", image: "filtre-ulei.jpeg", category: "c" },
+  { id: 19, name: "Materiale Filtrante", image: "materiale-filtrante.jpeg", category: "c" },
 ];
 
 // Correct answers for each business category
 const correctAnswers = {
-  a: [1, 3, 5, 8, 10, 11, 12, 9, 6, 4, 2, 15], // HoReCa - Oil, glass, metal, plastic, glass packaging, electronics, bulbs, construction, household, municipal, paper, wood/furniture
-  b: [2, 4, 6, 9, 5, 7, 12, 8, 13, 10, 11, 3, 15, 1], // Construcții - Paper/cardboard, municipal, household, construction, metal, auto, bulbs, plastic, hazardous, glass packaging, electronics, glass, wood/furniture, oil
-  c: [7, 13, 14, 15, 6, 12, 8, 4, 2, 10, 11], // Magazin online/fizic - Auto, hazardous, used oil, wood/furniture, household, bulbs, plastic, municipal, paper, glass packaging, electronics
-  d: [2, 4, 6, 12, 8, 10, 11, 15],          // Educație - Paper/cardboard, municipal, household, bulbs, plastic, glass packaging, electronics, wood/furniture
-  e: [1, 3, 8, 11, 6, 12, 4, 2, 13, 10, 15], // Beauty - Oil, glass, plastic, electronics, household, bulbs, municipal, paper, hazardous, glass packaging, wood/furniture
-  f: [5, 7, 13, 14, 6, 12, 8, 4, 2, 10, 11, 3, 15, 1], // Service auto - Metal, auto, hazardous, used oil, household, bulbs, plastic, municipal, paper, glass packaging, electronics, glass, wood/furniture, oil
-  g: [2, 4, 6, 11, 12, 8, 10, 15],          // Birouri/Servicii - Paper, municipal, household, electronics, bulbs, plastic, glass packaging, wood/furniture
-  h: [2, 4, 6, 5, 12, 8, 10, 11, 15],       // Tipografie - Paper/cardboard, municipal, household, metal, bulbs, plastic, glass packaging, electronics, wood/furniture
+  a: [1, 3, 5, 8, 10, 11, 12, 9, 6, 4, 2, 15, 17], // HoReCa - Oil, glass, metal, plastic, glass packaging, electronics, bulbs, construction, household, municipal, paper, wood/furniture, textile
+  b: [2, 4, 6, 9, 5, 7, 12, 8, 13, 10, 11, 3, 15, 1, 17, 16, 19, 18], // Construcții - Paper/cardboard, municipal, household, construction, metal, auto, bulbs, plastic, hazardous, glass packaging, electronics, glass, wood/furniture, oil, textile, non-ferrous, filter materials, oil filters
+  c: [7, 13, 14, 15, 6, 12, 8, 4, 2, 10, 11, 17], // Magazin online/fizic - Auto, hazardous, used oil, wood/furniture, household, bulbs, plastic, municipal, paper, glass packaging, electronics, textile
+  d: [2, 4, 6, 12, 8, 10, 11, 15, 17],          // Educație - Paper/cardboard, municipal, household, bulbs, plastic, glass packaging, electronics, wood/furniture, textile
+  e: [1, 3, 8, 11, 6, 12, 4, 2, 13, 10, 15, 17], // Beauty - Oil, glass, plastic, electronics, household, bulbs, municipal, paper, hazardous, glass packaging, wood/furniture, textile
+  f: [5, 7, 13, 14, 6, 12, 8, 4, 2, 10, 11, 3, 15, 1, 17, 16, 19, 18], // Service auto - Metal, auto, hazardous, used oil, household, bulbs, plastic, municipal, paper, glass packaging, electronics, glass, wood/furniture, oil, textile, non-ferrous, filter materials, oil filters
+  g: [2, 4, 6, 11, 12, 8, 10, 15, 17],          // Birouri/Servicii - Paper, municipal, household, electronics, bulbs, plastic, glass packaging, wood/furniture, textile
+  h: [2, 4, 6, 5, 12, 8, 10, 11, 15, 17],       // Tipografie - Paper/cardboard, municipal, household, metal, bulbs, plastic, glass packaging, electronics, wood/furniture, textile
+  i: [2, 4, 6, 12, 8, 10, 11, 15, 17, 16, 19, 18], // Producție - Paper, municipal, household, bulbs, plastic, glass packaging, electronics, wood/furniture, textile, non-ferrous, filter materials, oil filters
 };
 
 const { Option } = Select;
