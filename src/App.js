@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Select, Button, Card, message } from "antd";
 import { CheckOutlined, CloseOutlined, ReloadOutlined, TrophyOutlined, BulbOutlined } from "@ant-design/icons";
 
@@ -68,6 +68,11 @@ export default function TrashSortingApp() {
   const [selectedItems, setSelectedItems] = useState([]);
   const [submitted, setSubmitted] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
+
+  // Scroll to top whenever step changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentStep]);
 
   // Show all items in the selector (not filtered by category)
   const filteredItems = trashItems;
