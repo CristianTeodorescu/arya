@@ -218,7 +218,7 @@ export default function TrashSortingApp() {
               <div 
                 style={{ 
                   display: "grid",
-                  gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))",
+                  gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
                   gap: "16px",
                   marginBottom: "24px"
                 }}
@@ -250,10 +250,10 @@ export default function TrashSortingApp() {
                       e.target.style.backgroundColor = "#fff";
                     }}
                   >
-                    <div style={{ fontSize: "32px", marginBottom: "8px" }}>
+                    <div style={{ fontSize: "48px", marginBottom: "12px" }}>
                       {category.emoji}
                     </div>
-                    <span style={{ fontSize: "14px", fontWeight: "500" }}>
+                    <span style={{ fontSize: "16px", fontWeight: "500" }}>
                       {category.name}
                     </span>
                   </div>
