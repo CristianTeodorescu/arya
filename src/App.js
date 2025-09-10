@@ -299,9 +299,10 @@ export default function TrashSortingApp() {
              <div 
                style={{ 
                  display: "grid",
-                 gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
+                 gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
                  gap: "20px",
-                 marginBottom: "24px"
+                 marginBottom: "24px",
+                 maxWidth: "100%"
                }}
              >
                {filteredItems.map(item => {
@@ -339,8 +340,11 @@ export default function TrashSortingApp() {
                          style={{
                            width: "100%",
                            height: "100%",
-                           objectFit: "cover"
+                           objectFit: "cover",
+                           maxWidth: "200px",
+                           maxHeight: "200px"
                          }}
+                         loading="lazy"
                          onError={(e) => {
                            e.target.style.display = "none";
                            e.target.nextSibling.style.display = "flex";
