@@ -373,7 +373,7 @@ export default function TrashSortingApp() {
                    color: isCorrect ? "#2e7d32" : "#c62828",
                    marginBottom: "8px"
                  }}>
-                   {isCorrect ? "🎉 Felicitări! 🎉" : "💡 Nu Chiar Corect"}
+                   {isCorrect ? "🎉 Felicitări! 🎉" : "⚠️ Aproape! ⚠️"}
                  </h3>
                  <div style={{ 
                    color: isCorrect ? "#388e3c" : "#d32f2f",
@@ -458,9 +458,6 @@ export default function TrashSortingApp() {
                      </div>
                    ) : (
                      <div>
-                       <p style={{ marginBottom: "16px", fontSize: "16px", fontWeight: "500" }}>
-                         ⚠️ Aproape! ⚠️
-                       </p>
                        <p style={{ marginBottom: "16px", fontSize: "15px" }}>
                          Ai identificat o parte din deșeurile generate de activitatea ta, dar ți-au scăpat câteva.
                        </p>
