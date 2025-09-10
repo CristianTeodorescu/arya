@@ -22,6 +22,7 @@ const businessCategories = [
   { id: "g", name: "Birouri/Servicii", emoji: "🏢" },
   { id: "h", name: "Tipografie", emoji: "🖨️" },
   { id: "i", name: "Producție", emoji: "🏭" },
+  { id: "j", name: "Servicii Medicale", emoji: "🏥" },
 ];
 
 // Trash data with business categories and real images
@@ -45,6 +46,7 @@ const trashItems = [
   { id: 17, name: "Deseuri Textile", image: "deseuri-textile.jpeg", category: "c" },
   { id: 18, name: "Filtre Ulei", image: "filtre-ulei.jpeg", category: "c" },
   { id: 19, name: "Materiale Filtrante", image: "materiale-filtrante.jpeg", category: "c" },
+  { id: 20, name: "Deseuri Medicale", image: "deseuri-medicale.jpeg", category: "c" },
 ];
 
 // Correct answers for each business category
@@ -58,6 +60,7 @@ const correctAnswers = {
   g: [2, 4, 6, 11, 12, 8, 10, 15, 17],          // Birouri/Servicii - Paper, municipal, household, electronics, bulbs, plastic, glass packaging, wood/furniture, textile
   h: [2, 4, 6, 5, 12, 8, 10, 11, 15, 17],       // Tipografie - Paper/cardboard, municipal, household, metal, bulbs, plastic, glass packaging, electronics, wood/furniture, textile
   i: [2, 4, 6, 12, 8, 10, 11, 15, 17, 16, 19, 18], // Producție - Paper, municipal, household, bulbs, plastic, glass packaging, electronics, wood/furniture, textile, non-ferrous, filter materials, oil filters
+  j: [20, 17, 15, 10, 4, 2, 12, 6, 11], // Servicii Medicale - Medical waste, textile, wood/furniture, glass packaging, municipal, paper/cardboard, bulbs, household, electronics
 };
 
 const { Option } = Select;
