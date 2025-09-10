@@ -463,19 +463,18 @@ export default function TrashSortingApp() {
                        </p>
                        <div style={{ marginBottom: "16px" }}>
                          <p style={{ marginBottom: "12px", fontSize: "15px", fontWeight: "600" }}>
-                           👉 Uite ce ai omis:
+                           👉 Uite ce era corect:
                          </p>
                          <div style={{ 
-                           backgroundColor: "#fff3cd", 
-                           border: "1px solid #ffeaa7",
+                           backgroundColor: "#d4edda", 
+                           border: "1px solid #c3e6cb",
                            borderRadius: "8px",
                            padding: "12px",
                            marginBottom: "12px"
                          }}>
                            {(() => {
                              const correctItems = correctAnswers[selectedCategory] || [];
-                             const missedItems = correctItems.filter(id => !selectedItems.includes(id));
-                             return missedItems.map(id => {
+                             return correctItems.map(id => {
                                const item = trashItems.find(item => item.id === id);
                                return item ? (
                                  <div key={id} style={{ 
@@ -484,7 +483,7 @@ export default function TrashSortingApp() {
                                    marginBottom: "8px",
                                    fontSize: "14px"
                                  }}>
-                                   <span style={{ marginRight: "8px" }}>•</span>
+                                   <span style={{ marginRight: "8px", color: "#28a745" }}>✓</span>
                                    <span>{item.name}</span>
                                  </div>
                                ) : null;
